@@ -1,0 +1,12 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "description": "11ty-til",
+  "main": "index.js",
+  "keywords": [],
+  "author": "coffee-dan",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
