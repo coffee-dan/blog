@@ -1,3 +1,6 @@
+url: 'https://coffee-dan.github.io'
+baseurl: 'blog'
+
 plugins:
   - jekyll-postcss
 
