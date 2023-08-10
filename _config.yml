@@ -1,3 +1,11 @@
+plugins:
+  - jekyll-postcss
+
+postcss:
+  # Disabling cache is needed for Tailwind CSS’s JIT engine.
+  # Without this, the server would need to restart after each change.
+  cache: false
+
 collections:
   authors:
     output: true
