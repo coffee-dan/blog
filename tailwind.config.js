@@ -8,10 +8,12 @@ module.exports = {
       './*.md',
       './*.html',
     ],
+    // https://tailwindcss.com/docs/theme
     theme: {
-      theme: {
-        extend: {},
-      },
+      fontFamily: {
+        sans: ['Montserrat', 'Arial', 'sans-serif'],
+        serif: ['Georgia', 'serif'],
+      }
     },
     plugins: []
   }
