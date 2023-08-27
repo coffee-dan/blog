@@ -13,4 +13,22 @@
       @apply underline;
     }
   }
+
+  .card {
+    @apply mx-auto;
+    @apply max-w-lg;
+    @apply bg-slate-700;
+    @apply shadow-md;
+    @apply text-slate-500;
+
+    @apply text-center;
+
+    border-radius: 30px;
+    padding: 1rem;
+
+    .header {
+      @apply text-4xl;
+      @apply text-sky-300;
+    }
+  }
 }
