@@ -4,10 +4,12 @@ title: Blog
 ---
 <h1>Latest Posts</h1>
 
-<ul>
+<ul class="list-none">
     {% for post in site.posts %}
         <li>
-            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <h2 class="border-none mb-0">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
             {{ post.excerpt }}
         </li>
     {% endfor %}

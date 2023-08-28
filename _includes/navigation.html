@@ -1,5 +1,5 @@
 <div class="mt-6 flex justify-between mx-auto max-w-prose">
-    <ul>
+    <ul class="px-0">
         {% for item in site.data.navigation %}
             <a
                 href="{{ item.link | relative_url }}"
@@ -7,7 +7,7 @@
             >{{ item.name }}</a>
         {% endfor %}
     </ul>
-    <ul>
+    <ul class="px-0 list-none">
         <li class="w-5 h-5">
             <a href="https://github.com/coffee-dan">
                 <svg
