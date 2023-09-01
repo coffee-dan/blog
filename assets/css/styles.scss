@@ -22,7 +22,7 @@
     @apply pb-2;
     @apply border-b;
     @apply border-solid;
-    @apply border-slate-700;
+    @apply border-gray-700;
   }
   h2 {
     @apply text-xl;
@@ -32,7 +32,7 @@
     @apply pb-2;
     @apply border-b;
     @apply border-solid;
-    @apply border-slate-700;
+    @apply border-gray-700;
   }
   h3 {
     @apply text-lg;
@@ -65,9 +65,13 @@
   .card {
     @apply mx-auto;
     @apply max-w-lg;
-    @apply bg-slate-700;
     @apply shadow-md;
-    @apply text-slate-500;
+
+    @apply bg-stone-50;
+    @apply text-stone-800;
+
+    @apply dark:bg-gray-800;
+    @apply dark:text-gray-50;
 
     @apply text-center;
 
@@ -76,7 +80,7 @@
 
     .header {
       @apply text-4xl;
-      @apply text-sky-300;
+      @apply dark:text-sky-300;
     }
   }
 }
