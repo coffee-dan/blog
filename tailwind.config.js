@@ -13,6 +13,11 @@ module.exports = {
       fontFamily: {
         sans: ['Montserrat', 'Arial', 'sans-serif'],
         serif: ['Georgia', 'serif'],
+      },
+      extend: {
+        gridTemplateColumns: {
+          'left-rail': '150px 1fr',
+        }
       }
     },
     plugins: []
