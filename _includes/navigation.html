@@ -1,4 +1,4 @@
-<div class="mt-6 flex justify-between mx-auto max-w-prose">
+<div class="mt-6 flex justify-between items-baseline mx-auto max-w-prose">
     <ul class="px-0">
         {% for item in site.data.navigation %}
             <a
@@ -7,4 +7,98 @@
             >{{ item.name }}</a>
         {% endfor %}
     </ul>
+    <div>
+        <button
+            id="button"
+            aria-describedby="tooltip"
+            class="h-6 w-6 bg-sky-600 rounded-md"
+        >
+            <div class="dark:hidden">
+                ☀️
+            </div>
+            <div class="hidden dark:block">
+                🌙
+            </div>
+        </button>
+        <div
+            id="tooltip"
+            role="tooltip"
+            class="bg-black text-white p-2 rounded-sm text-sm w-max
+                absolute top-0 left-0
+                hidden
+            "
+        >
+            My tooltip with lots of content
+            <div
+                id="arrow"
+                class="absolute bg-black w-2 h-2 rotate-45"
+            ></div>
+        </div>
+        <script type="module">
+            import {
+                computePosition,
+                flip,
+                shift,
+                offset,
+                arrow,
+            } from 'https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.5.1/+esm';
+
+            const button = document.querySelector('#button');
+            const tooltip = document.querySelector('#tooltip');
+            const arrowElement = document.querySelector('#arrow');
+
+            function update() {
+                computePosition(button, tooltip, {
+                    placement: 'top',
+                    middleware: [
+                        offset(6),
+                        flip(),
+                        shift({padding: 5}),
+                        arrow({element: arrowElement})
+                    ],
+                }).then(({x, y, placement, middlewareData}) => {
+                    Object.assign(tooltip.style, {
+                        left: `${x}px`,
+                        top: `${y}px`,
+                    });
+
+                    // Data provdided by arrow()
+                    const {x: arrowX, y: arrowY} = middlewareData.arrow;
+
+                    const staticSide = {
+                        top: 'bottom',
+                        right: 'left',
+                        bottom: 'top',
+                        left: 'right',
+                    }[placement.split('-')[0]];
+
+                    Object.assign(arrowElement.style, {
+                        left: arrowX != null ? `${arrowX}px` : '',
+                        top: arrowY != null ? `${arrowY}px` : '',
+                        right: '',
+                        bottom: '',
+                        [staticSide]: '-4px'
+                    })
+                });
+            }
+
+            function showTooltip() {
+                tooltip.style.display = 'block';
+                update();
+            }
+
+            function hideTooltip() {
+                tooltip.style.display = '';
+            }
+
+            [
+                ['mouseenter', showTooltip],
+                ['mouseleave', hideTooltip],
+                ['focus', showTooltip],
+                ['blur', hideTooltip],
+            ].forEach(([event, listener]) => {
+                button.addEventListener(event, listener);
+            });
+        </script>
+    </div>
 </div>
