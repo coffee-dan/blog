@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
+        <script src="/assets/js/bundle.js"></script>
     </head>
     <body class="text-stone-900 bg-stone-50 dark:text-gray-50 dark:bg-gray-800">
         <div class="mt-6 flex justify-between items-baseline mx-auto max-w-prose">
@@ -40,22 +41,37 @@
         <div
             id="tooltip"
             role="tooltip"
-            class="bg-black text-white p-2 rounded-sm text-sm w-max
+            class="bg-black text-white font-bold
+                py-1 rounded-md text-sm w-32
                 absolute top-0 left-0
                 hidden
+                z-popover
             "
         >
-            My tooltip with lots of content
+            <div
+                id="light-mode"
+                class="py-1 px-2 hover:bg-gray-700 cursor-pointer aria-checked:text-sky-600">
+                ☀️ Light
+            </div>
+            <div
+                id="dark-mode"
+                class="py-1 px-2 hover:bg-gray-700 cursor-pointer aria-checked:text-sky-600">
+                🌙 Dark
+            </div>
+            <div
+                id="system-mode"
+                aria-checked="true"
+                class="py-1 px-2 hover:bg-gray-700 cursor-pointer aria-checked:text-sky-600">
+                🖥️ System
+            </div>
             <div
                 id="arrow"
-                class="absolute bg-black w-2 h-2 rotate-45"
+                class="absolute bg-black w-2 h-2 rotate-45 z-1"
             ></div>
         </div>
         <script type="module">
             import {
                 computePosition,
-                flip,
-                shift,
                 offset,
                 arrow,
             } from 'https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.5.1/+esm';
@@ -66,11 +82,9 @@
 
             function update() {
                 computePosition(button, tooltip, {
-                    placement: 'top',
+                    placement: 'bottom',
                     middleware: [
                         offset(6),
-                        flip(),
-                        shift({padding: 5}),
                         arrow({element: arrowElement})
                     ],
                 }).then(({x, y, placement, middlewareData}) => {
@@ -99,23 +113,48 @@
                 });
             }
 
-            function showTooltip() {
-                tooltip.style.display = 'block';
-                update();
+            function toggleTooltip () {
+                if (tooltip.style.display == 'block') {
+                    tooltip.style.display = '';
+                } else {
+                    tooltip.style.display = 'block';
+                    update();
+                }
             }
 
-            function hideTooltip() {
-                tooltip.style.display = '';
+            button.addEventListener('click', function() {
+                toggleTooltip()
+                if (tooltip.style.display == 'block') {
+                    update();
+                }
+            })
+            const lightModeBtn = document.querySelector('#light-mode');
+            const darkModeBtn = document.querySelector('#dark-mode');
+            const systemModeBtn = document.querySelector('#system-mode');
+
+            function updateSelected(container, selection) {
+                container.querySelectorAll('[aria-checked=true]').forEach(prior_selection => {
+                    prior_selection.ariaChecked = false;
+                });
+                selection.ariaChecked = true;
             }
 
-            [
-                ['mouseenter', showTooltip],
-                ['mouseleave', hideTooltip],
-                ['focus', showTooltip],
-                ['blur', hideTooltip],
-            ].forEach(([event, listener]) => {
-                button.addEventListener(event, listener);
-            });
+            // Explicit theme selection
+            lightModeBtn.addEventListener('click', function(event) {
+                updateSelected(tooltip, lightModeBtn)
+                setTheme('light')
+                toggleTooltip()
+            })
+            darkModeBtn.addEventListener('click', () => {
+                updateSelected(tooltip, darkModeBtn)
+                setTheme('dark')
+                toggleTooltip()
+            })
+            systemModeBtn.addEventListener('click', () => {
+                updateSelected(tooltip, systemModeBtn)
+                unsetTheme()
+                toggleTooltip()
+            })
         </script>
     </div>
 </div>
