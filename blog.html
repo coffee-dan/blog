@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0", name="viewport">
         <title>Blog</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤠</text></svg>">
@@ -11,8 +12,11 @@
         <script src="/assets/js/bundle.js"></script>
     </head>
     <body class="text-stone-900 bg-stone-50 dark:text-gray-50 dark:bg-gray-800">
-        <div class="mt-6 flex justify-between items-baseline mx-auto max-w-prose">
-    <ul class="px-0">
+        <div class="flex justify-between items-baseline
+    mt-2 mx-auto max-w-prose
+    px-2
+    ">
+    <div>
         
             <a
                 href="/"
@@ -24,7 +28,7 @@
                 class="current"
             >Blog</a>
         
-    </ul>
+    </div>
     <div>
         <button
             id="button"
@@ -82,7 +86,7 @@
 
             function update() {
                 computePosition(button, tooltip, {
-                    placement: 'bottom',
+                    placement: 'bottom-end',
                     middleware: [
                         offset(6),
                         arrow({element: arrowElement})
