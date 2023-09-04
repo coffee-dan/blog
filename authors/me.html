@@ -17,23 +17,27 @@
     px-2
     ">
     <div>
-        
-            <a
-                href="/"
-                
-            >Home</a>
-        
-            <a
-                href="/blog.html"
-                
-            >Blog</a>
-        
+        <a
+            class="font-bold text-stone-900 dark:text-gray-50
+                hover:text-blue-500 dark:hover:text-blue-500
+            "
+            href="/"
+
+        >Home</a>
     </div>
     <div>
+        <a
+            class="font-bold text-stone-900 dark:text-gray-50
+                hover:text-blue-500 dark:hover:text-blue-500
+                mr-2 pr-4 border-r-2 border-r-slate-700
+            "
+            href="/blog.html"
+
+        >Writing</a>
         <button
             id="button"
             aria-describedby="tooltip"
-            class="h-6 w-6 bg-sky-600 rounded-md"
+            class="h-6 w-6 rounded-md"
         >
             <div class="dark:hidden">
                 ☀️
@@ -54,7 +58,8 @@
         >
             <div
                 id="light-mode"
-                class="py-1 px-2 hover:bg-gray-700 cursor-pointer aria-checked:text-sky-600">
+                class="py-1 px-2 hover:bg-gray-700 cursor-pointer aria-checked:text-sky-600
+                    relative z-[1]">
                 ☀️ Light
             </div>
             <div
@@ -70,7 +75,7 @@
             </div>
             <div
                 id="arrow"
-                class="absolute bg-black w-2 h-2 rotate-45 z-1"
+                class="absolute bg-black w-2 h-2 rotate-45"
             ></div>
         </div>
         <script type="module">
