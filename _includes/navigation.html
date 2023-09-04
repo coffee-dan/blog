@@ -1,12 +1,15 @@
-<div class="mt-6 flex justify-between items-baseline mx-auto max-w-prose">
-    <ul class="px-0">
+<div class="flex justify-between items-baseline
+    mt-2 mx-auto max-w-prose
+    px-2
+    ">
+    <div>
         {% for item in site.data.navigation %}
             <a
                 href="{{ item.link | relative_url }}"
                 {% if page.url == item.link %}class="current"{% endif %}
             >{{ item.name }}</a>
         {% endfor %}
-    </ul>
+    </div>
     <div>
         <button
             id="button"
@@ -64,7 +67,7 @@
 
             function update() {
                 computePosition(button, tooltip, {
-                    placement: 'bottom',
+                    placement: 'bottom-end',
                     middleware: [
                         offset(6),
                         arrow({element: arrowElement})
