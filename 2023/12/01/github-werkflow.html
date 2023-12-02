@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>Blog</title>
+        <title>Github Werkflow</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤠</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,43 +171,71 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>Latest Posts</h1>
+            <h1>Github Werkflow</h1>
 
-<ul class="list-none">
+<p class="text-xs">
+    01 Dec 2023
     
-        <li>
-            <h2 class="border-none mb-0">
-                <a href="/2023/12/01/go-debugging.html">Go Debugging</a>
-            </h2>
-            <h2 id="vscode-in-ide-debugger">VSCode In-IDE Debugger</h2>
+    
+        - <a href="/authors/me.html">Daniel Ramirez</a>
+    
+</p>
 
-        </li>
-    
-        <li>
-            <h2 class="border-none mb-0">
-                <a href="/2023/12/01/github-werkflow.html">Github Werkflow</a>
-            </h2>
-            <h1 id="git">git</h1>
+<h1 id="git">git</h1>
 
-        </li>
-    
-        <li>
-            <h2 class="border-none mb-0">
-                <a href="/2023/08/27/why-go.html">Why Go</a>
-            </h2>
-            <p>Firstly, it’s just a <em>nice</em> language. I’ve heard it described as the programming equivalent of eating your vegetables. I’d consider it eating broccoli slathered in cheese sauce. Not everyone likes it because it makes an attempt to make vegetables palatable.</p>
+<h2 id="hurry-before-i-forget">Hurry, before I forget</h2>
 
-        </li>
-    
-        <li>
-            <h2 class="border-none mb-0">
-                <a href="/2023/04/01/all-my-links-are-dead.html">All My Links Are Dead</a>
-            </h2>
-            <p>Today I Learned: all my links are dead</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># [g]it [n]ew [b]ranch</span>
+<span class="nb">alias </span><span class="nv">gnb</span><span class="o">=</span><span class="s2">"git stash --include-untracked &amp;&amp; git checkout main &amp;&amp; git pull &amp;&amp; git checkout -b"</span>
 
-        </li>
-    
-</ul>
+gnb dgr/foobar-baz-quux
+</code></pre></div></div>
+
+<p>Stash everything, update main, branch off of it, start writing, fail to forget.</p>
+
+<h2 id="oops-one-more-thing">Oops, one more thing!</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># [g]it [c]ommit [a]mend [a]ll</span>
+<span class="nb">alias </span><span class="nv">gcaa</span><span class="o">=</span><span class="s2">"git commit -a --amend --no-edit"</span>
+
+gcaa
+</code></pre></div></div>
+
+<p>Amend to last commit, move on.</p>
+
+<h2 id="save-my-work">Save my work</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># [g]it [p]ush [s]et [up]stream</span>
+<span class="nb">alias </span><span class="nv">gpsup</span><span class="o">=</span><span class="s2">"git push --set-upstream origin"</span>
+
+gpsup
+</code></pre></div></div>
+
+<p>Give origin server your new branch, move on.</p>
+
+<h2 id="wait-where-was-i">Wait, where was I?</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># [g]it [c]heck [h]istory</span>
+<span class="c">#   requires a copy of ripgrep and fuzzyfind from wherever you source your packages</span>
+<span class="nb">alias </span><span class="nv">gch</span><span class="o">=</span><span class="s2">"git reflog show --pretty=format:'%gs' | rg 'checkout:' | rg -o '[^ ]+</span><span class="nv">$'</span><span class="s2"> | awk '!seen[</span><span class="se">\$</span><span class="s2">1]++' | tail -n +2 | fzf | xargs git checkout"</span>
+
+gch
+</code></pre></div></div>
+
+<p>Check git checkout history, display in fuzzy find, get back to what you were doing.</p>
+
+<h1 id="github">github</h1>
+
+<h2 id="i-do-not-want-to-run-tests-locally">I do not want to run tests locally</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># [g]it[h]ub [draft]</span>
+<span class="nb">alias </span><span class="nv">ghdraft</span><span class="o">=</span><span class="s2">"git push --set-upstream origin &amp;&amp; gh pr create --assignee @me --fill --draft &amp;&amp; gh pr view --web"</span>
+
+ghdraft
+</code></pre></div></div>
+
+<p>Give origin server your new branch, create pull request, open in browser, go get coffee.</p>
+
 
         </main>
     </body>
