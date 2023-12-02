@@ -1,0 +1,17 @@
+Layout/ExtraSpacing:
+  AllowForAlignment: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+
+# "redundant" self brings clarity
+Style/RedundantSelf:
+  Enabled: false
+
+Style/RedundantReturn:
+  Enabled: false
+
+# see: https://docs.rubocop.org/rubocop/cops_style.html#stylesymbolproc
+Style/SymbolProc:
+  Enabled: true

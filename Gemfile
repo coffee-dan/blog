@@ -2,6 +2,10 @@
 
 source "https://rubygems.org"
 
-gem "jekyll", '~> 4.3'
+gem "jekyll", "~> 4.3"
 gem "jekyll-postcss"
-gem 'webrick'
+gem "webrick"
+
+group :development do
+  gem "standard", "~> 1.28"
+end
