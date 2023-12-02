@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>Blog</title>
+        <title>Go Debugging</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤠</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,35 +171,60 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>Latest Posts</h1>
+            <h1>Go Debugging</h1>
 
-<ul class="list-none">
+<p class="text-xs">
+    01 Dec 2023
     
-        <li>
-            <h2 class="border-none mb-0">
-                <a href="/2023/12/01/go-debugging.html">Go Debugging</a>
-            </h2>
-            <h2 id="vscode-in-ide-debugger">VSCode In-IDE Debugger</h2>
+    
+        - <a href="/authors/me.html">Daniel Ramirez</a>
+    
+</p>
 
-        </li>
-    
-        <li>
-            <h2 class="border-none mb-0">
-                <a href="/2023/08/27/why-go.html">Why Go</a>
-            </h2>
-            <p>Firstly, it’s just a <em>nice</em> language. I’ve heard it described as the programming equivalent of eating your vegetables. I’d consider it eating broccoli slathered in cheese sauce. Not everyone likes it because it makes an attempt to make vegetables palatable.</p>
+<h2 id="vscode-in-ide-debugger">VSCode In-IDE Debugger</h2>
 
-        </li>
-    
-        <li>
-            <h2 class="border-none mb-0">
-                <a href="/2023/04/01/all-my-links-are-dead.html">All My Links Are Dead</a>
-            </h2>
-            <p>Today I Learned: all my links are dead</p>
+<ol>
+  <li>have launch.json
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Launch Package"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"go"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"request"</span><span class="p">:</span><span class="w"> </span><span class="s2">"launch"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"program"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${fileDirname}"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"console"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integratedTerminal"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"showGlobalVariables"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>hit Launch</li>
+  <li>Interact with program inside of xterm.js</li>
+</ol>
 
-        </li>
-    
-</ul>
+<h2 id="other-considerations">Other considerations</h2>
+
+<h3 id="bubbletea">bubbletea</h3>
+
+<ol>
+  <li>Insert logToFile somewhwere near entry point to program
+    <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"DEBUG"</span><span class="p">))</span> <span class="o">&gt;</span> <span class="m">0</span> <span class="p">{</span>
+ <span class="n">f</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">tea</span><span class="o">.</span><span class="n">LogToFile</span><span class="p">(</span><span class="s">"debug.log"</span><span class="p">,</span> <span class="s">"debug"</span><span class="p">)</span>
+ <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+     <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"fatal:"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+     <span class="n">os</span><span class="o">.</span><span class="n">Exit</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+ <span class="p">}</span>
+
+ <span class="k">defer</span> <span class="n">f</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Add logging wrapped in <code class="language-plaintext highlighter-rouge">DEBUG</code> checks
+    <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"DEBUG"</span><span class="p">))</span> <span class="o">&gt;</span> <span class="m">0</span> <span class="p">{</span>
+ <span class="n">log</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
 
         </main>
     </body>
