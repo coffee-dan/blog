@@ -3,6 +3,8 @@ author: me
 favicon: 🤖
 ---
 
+Description of options for debugging standalone go program (not a webserver).
+
 ## VSCode In-IDE Debugger
 
 1. have launch.json

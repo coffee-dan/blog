@@ -3,6 +3,8 @@ author: me
 favicon: ⚡
 ---
 
+Collection of aliases that describe my git/github workflow. Especially when working in a team.
+
 # git
 
 ## Hurry, before I forget
