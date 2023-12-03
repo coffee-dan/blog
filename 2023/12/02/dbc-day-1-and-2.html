@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>Go Debugging</title>
+        <title>Dbc Day 1 And 2</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕸️</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,61 +171,77 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>Go Debugging</h1>
+            <h1>Dbc Day 1 And 2</h1>
 
 <p class="text-xs">
-    01 Dec 2023
+    02 Dec 2023
     
     
         - <a href="/authors/me.html">Daniel Ramirez</a>
     
 </p>
 
-<p>Description of options for debugging standalone go program (not a webserver).</p>
+<p>December Build Club</p>
 
-<h2 id="vscode-in-ide-debugger">VSCode In-IDE Debugger</h2>
+<h3 id="december-build-club">December Build Club?</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Work on a project everday for a month (December) to get it off the ground.
+</code></pre></div></div>
 
-<ol>
-  <li>have launch.json
-    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Launch Package"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"go"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"request"</span><span class="p">:</span><span class="w"> </span><span class="s2">"launch"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"program"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${fileDirname}"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"console"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integratedTerminal"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"showGlobalVariables"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="err">,</span><span class="w">
-</span></code></pre></div>    </div>
+<h1 id="day-1">Day 1</h1>
+
+<p>Stepped into an old project, Bubble Chess, which has the goal of helping a Chess novice develop an intuition for Algebraic notation. This will be done in the terminal using the Terminal UI framework named Bubbletea which implementes a Model-View-Update pattern that I haven’t worked with before this but quite like.</p>
+
+<p>Wins for the day:</p>
+<ul>
+  <li>Documented the debugging process before I forgot about it forever
+    <ul>
+      <li>Had to use <code class="language-plaintext highlighter-rouge">cat ~/.githistory | fzf</code> to figure out what I had been doing months ago</li>
+    </ul>
   </li>
-  <li>hit Launch</li>
-  <li>Interact with program inside of xterm.js</li>
-</ol>
-
-<h2 id="other-considerations">Other considerations</h2>
-
-<h3 id="bubbletea">bubbletea</h3>
-
-<ol>
-  <li>Insert logToFile somewhwere near entry point to program
-    <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"DEBUG"</span><span class="p">))</span> <span class="o">&gt;</span> <span class="m">0</span> <span class="p">{</span>
- <span class="n">f</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">tea</span><span class="o">.</span><span class="n">LogToFile</span><span class="p">(</span><span class="s">"debug.log"</span><span class="p">,</span> <span class="s">"debug"</span><span class="p">)</span>
- <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
-     <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"fatal:"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
-     <span class="n">os</span><span class="o">.</span><span class="n">Exit</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
- <span class="p">}</span>
-
- <span class="k">defer</span> <span class="n">f</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
+  <li>Descoped the project
+    <ul>
+      <li>I will be targetting MacOS/Zsh/Alacritty and making no consideration for the weird color behavior in VSCode/xterm.js</li>
+      <li>I will be soley creating a terminal app during this December, the in-browser WASM app will have to wait</li>
+    </ul>
   </li>
-  <li>Add logging wrapped in <code class="language-plaintext highlighter-rouge">DEBUG</code> checks
-    <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"DEBUG"</span><span class="p">))</span> <span class="o">&gt;</span> <span class="m">0</span> <span class="p">{</span>
- <span class="n">log</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
+</ul>
+
+<p>Next:</p>
+<ul>
+  <li>Refactor color handling given scope change</li>
+  <li>Create tutorial notifications (errors, hints, etc)</li>
+  <li>Create highlighting system
+    <ul>
+      <li>Start with highlighting column when user types in column header</li>
+      <li>Create data structure for highlight state (bitboard?)</li>
+    </ul>
   </li>
-</ol>
+</ul>
+
+<h1 id="day-2">Day 2</h1>
+
+<p>Wins:</p>
+<ul>
+  <li>Updated visuals
+    <ul>
+      <li>Colors now using <code class="language-plaintext highlighter-rouge">lipgloss.CompleteColor{}</code> which gives granular control over colors used for various levels of color-support</li>
+    </ul>
+  </li>
+  <li>Fixed long-standing bug
+    <ul>
+      <li>I wasn’t updating the move history when the enemy moved</li>
+    </ul>
+  </li>
+  <li>Working on highlightBoard using bitboard
+    <ul>
+      <li>I confirmed this was a reasonable starting point by reading the chess go pkg source. At this point I have a copy locally that I check frequently.
+        <ul>
+          <li>With this window include I am now using 3 instances of VSCode at a time, it has struck me that maybe I could find a better way to do this but maybe much later.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 
         </main>
