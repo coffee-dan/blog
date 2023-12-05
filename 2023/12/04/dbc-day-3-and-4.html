@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>Me</title>
+        <title>Dbc Day 3 And 4</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤠</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏃</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,29 +171,87 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>Daniel Ramirez</h1>
-<h2>Site Author</h2>
+            <h1>Dbc Day 3 And 4</h1>
 
-<p>I’m the only one that writes here (for now).</p>
+<p class="text-xs">
+    04 Dec 2023
+    
+    
+        - <a href="/authors/me.html">Daniel Ramirez</a>
+    
+</p>
 
+<p>Hectic schedule, uint64, and Malt Ale</p>
 
-<h2>Posts</h2>
+<h1 id="day-3">Day 3</h1>
+
+<p>Wins for the day:</p>
 <ul>
-  
-  
-    <li><a href="/2023/12/04/dbc-day-3-and-4.html">Dbc Day 3 And 4</a></li>
-  
-    <li><a href="/2023/12/02/dbc-day-1-and-2.html">Dbc Day 1 And 2</a></li>
-  
-    <li><a href="/2023/12/01/go-debugging.html">Go Debugging</a></li>
-  
-    <li><a href="/2023/12/01/github-werkflow.html">Github Werkflow</a></li>
-  
-    <li><a href="/2023/08/27/why-go.html">Why Go</a></li>
-  
-    <li><a href="/2023/04/01/all-my-links-are-dead.html">All My Links Are Dead</a></li>
-  
+  <li>Figured out exactly how I would like to structure <code class="language-plaintext highlighter-rouge">func (m *Model) highlightColumn(colHeader string)</code>
+    <ul>
+      <li>I will be holding on to a bitboard that describes the current highlighted squares and on each input change this will be updated by ANDing or XORing the bitboard with uint64 bitmasks (i think that’s the term) built via taking two to the power of the indexes that need their values updated
+        <ul>
+          <li>Had to introduce the shortlived <code class="language-plaintext highlighter-rouge">func intPow(n, m int) int</code> for this</li>
+        </ul>
+      </li>
+      <li>It did not work :)</li>
+      <li>In the shower after the second coding session of the day (bizy day) it occurred to me it would likely be less expensive to construct a string every time and then parse to binary and cast to uint64</li>
+    </ul>
+  </li>
+  <li>Pictures
+    <ul>
+      <li>Inital Board
+  <img src="/assets/dbc-day-3-init-board.png" alt="chess board inside terminal with simple prompts for player input" /></li>
+      <li>Broken Highlight
+  <img src="/assets/dbc-day-3-broken-highlight-1.png" alt="chess board inside terminal with E as player input and D8 highlighted, this of course being not helpful information" /></li>
+      <li>Even more broken
+  <img src="/assets/dbc-day-3-broken-highlight-2.png" alt="chess board inside terminal with Efoobar as player input and D8 highlighted, this is even less helpful than the last highlight" />
+  highlight only changes if another highlight can take it’s place</li>
+    </ul>
+  </li>
 </ul>
+
+<p>Notes:</p>
+<ul>
+  <li>Still some tough spots from no time blocking</li>
+</ul>
+
+<p>Next:</p>
+<ul>
+  <li>Fix highlight system
+    <ul>
+      <li>Construct highlight bitboard on each input update</li>
+    </ul>
+  </li>
+  <li>Replace existing tutorial notifications (errors, hints, etc)
+    <ul>
+      <li>Currently there’s a basic validation system the is shoved right above the input field and does not have enough room to be legible</li>
+      <li>Likely popovers?</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="day-4">Day 4</h1>
+
+<p>Wins:</p>
+<ul>
+  <li>Time blocked from 10pm to 1am :–)
+    <ul>
+      <li>and i got some Dead Guy Ale during my Monday errands (6/10 would buy again in a pinch)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Notes:</p>
+<ul>
+  <li>TBD</li>
+</ul>
+
+<p>Next:</p>
+<ul>
+  <li>TBD</li>
+</ul>
+
 
         </main>
     </body>
