@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>Me</title>
+        <title>Dbc Day 6</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤠</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐱</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,33 +171,84 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>Daniel Ramirez</h1>
-<h2>Site Author</h2>
+            <h1>Dbc Day 6</h1>
 
-<p>I’m the only one that writes here (for now).</p>
+<p class="text-xs">
+    05 Dec 2023
+    
+    
+        - <a href="/authors/me.html">Daniel Ramirez</a>
+    
+</p>
 
+<p>Cat coding companion, func born to die, commit to move on</p>
 
-<h2>Posts</h2>
+<h1 id="day-5">Day 5</h1>
+
+<p>Wins:</p>
 <ul>
-  
-  
-    <li><a href="/2023/12/05/DBC-day-6.html">Dbc Day 6</a></li>
-  
-    <li><a href="/2023/12/05/DBC-day-5.html">Dbc Day 5</a></li>
-  
-    <li><a href="/2023/12/04/dbc-day-3-and-4.html">Dbc Day 3 And 4</a></li>
-  
-    <li><a href="/2023/12/02/dbc-day-1-and-2.html">Dbc Day 1 And 2</a></li>
-  
-    <li><a href="/2023/12/01/go-debugging.html">Go Debugging</a></li>
-  
-    <li><a href="/2023/12/01/github-werkflow.html">Github Werkflow</a></li>
-  
-    <li><a href="/2023/08/27/why-go.html">Why Go</a></li>
-  
-    <li><a href="/2023/04/01/all-my-links-are-dead.html">All My Links Are Dead</a></li>
-  
+  <li>Finished three-rune highlighting
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">b1c</code> highlights the B-file knight’s right hand move</li>
+    </ul>
+  </li>
+  <li>Started single-rune piece-type highlighting
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">N</code> highlights all knights</li>
+    </ul>
+  </li>
+  <li>Determined lots of my rough draft code will be replaced soon!
+    <ul>
+      <li>I’ve gotten good at writing functions quickly to express the idea in my head so that as my understanding of the goal/problem improves I can rip up the funcs laid down right behind me to place new funcs in front of me.</li>
+      <li>This likely looks like a intuitive understanding of the “dont prematurely optimize” nugget of wisdom.</li>
+    </ul>
+  </li>
 </ul>
+
+<p>Notes:</p>
+<ul>
+  <li>My cat decided to sleep next to me while I’m writing tonight, look at him
+    <ul>
+      <li><img src="/assets/dbc-day-6-gus.png" alt="a very normal looking cat sleeping on a grey blanket" /></li>
+    </ul>
+  </li>
+  <li>Some func-y Golang stuff is going on
+    <ul>
+      <li>CI pipeline cannot build project for some reason. Devoops
+        <ul>
+          <li>Which on that note I don’t have any tests at the moment, that might be worth addressing soon</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Next:</p>
+<ul>
+  <li>continue work on highlighting
+    <ul>
+      <li>named moves need to mesh into the existing one-two-three rune highlighting progression</li>
+    </ul>
+  </li>
+  <li>think about auto complete system
+    <ul>
+      <li>seems like the easiest way to convey non-obvious movements like capturing, assisting users with including piece names in their move command</li>
+      <li>really like the zsh behavior for tabbing between possible options where each option updates the content of the command line as you select
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">cd </code> and then tab tab tab</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>design work
+    <ul>
+      <li>miro?</li>
+      <li>design validation system (layout/style/content)</li>
+      <li>design menus (restart/exit/game setup)</li>
+    </ul>
+  </li>
+</ul>
+
 
         </main>
     </body>
