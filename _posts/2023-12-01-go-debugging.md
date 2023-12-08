@@ -7,6 +7,12 @@ Description of options for debugging standalone go program (not a webserver).
 
 ## VSCode In-IDE Debugger
 
+```rb
+def foo
+    puts 'foo'
+end
+```
+
 1. have launch.json
 ```json
 {

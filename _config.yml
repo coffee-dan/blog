@@ -3,6 +3,9 @@ url: 'https://danielramirez.xyz'
 plugins:
   - jekyll-postcss
 
+# kramdown:
+#   syntax_highlighter: rouge
+
 postcss:
   # Disabling cache is needed for Tailwind CSS’s JIT engine.
   # Without this, the server would need to restart after each change.
