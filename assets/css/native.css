@@ -2,7 +2,7 @@
     padding: 16px;
     border-radius: 4px;
     background-color: #404040;
-    white-space: pre-line;
+    text-wrap: pretty;
 }
 .highlight .hll { background-color: #404040 }
 .highlight .c { color: #999999; font-style: italic } /* Comment */
