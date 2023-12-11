@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0", name="viewport">
+        <title>DBC day 9</title>
+        <link rel="stylesheet" href="/assets/css/styles.css">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍻</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
+        <script src="/assets/js/bundle.js"></script>
+    </head>
+    <body class="text-stone-900 bg-stone-50 dark:text-gray-50 dark:bg-gray-800">
+        <div class="flex justify-between items-baseline
+    mt-2 mx-auto max-w-prose
+    px-2
+    ">
+    <div>
+        <a
+            class="font-bold text-stone-900 dark:text-gray-50
+                hover:text-blue-500 dark:hover:text-blue-500
+            "
+            href="/"
+
+        >Home</a>
+    </div>
+    <div>
+        <a
+            class="font-bold text-stone-900 dark:text-gray-50
+                hover:text-blue-500 dark:hover:text-blue-500
+                mr-2 pr-4 border-r-2 border-r-slate-700
+            "
+            href="/blog.html"
+
+        >Writing</a>
+        <button
+            id="button"
+            aria-describedby="tooltip"
+            class="h-6 w-6 rounded-md"
+        >
+            <div class="dark:hidden">
+                ☀️
+            </div>
+            <div class="hidden dark:block">
+                🌙
+            </div>
+        </button>
+        <div
+            id="tooltip"
+            role="tooltip"
+            class="bg-black text-white font-bold
+                py-1 rounded-md text-sm w-32
+                absolute top-0 left-0
+                hidden
+                z-popover
+            "
+        >
+            <div
+                id="light-mode"
+                class="py-1 px-2 hover:bg-gray-700 cursor-pointer aria-checked:text-sky-600
+                    relative z-[1]">
+                ☀️ Light
+            </div>
+            <div
+                id="dark-mode"
+                class="py-1 px-2 hover:bg-gray-700 cursor-pointer aria-checked:text-sky-600">
+                🌙 Dark
+            </div>
+            <div
+                id="system-mode"
+                aria-checked="true"
+                class="py-1 px-2 hover:bg-gray-700 cursor-pointer aria-checked:text-sky-600">
+                🖥️ System
+            </div>
+            <div
+                id="arrow"
+                class="absolute bg-black w-2 h-2 rotate-45"
+            ></div>
+        </div>
+        <script type="module">
+            import {
+                computePosition,
+                offset,
+                arrow,
+            } from 'https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.5.1/+esm';
+
+            const button = document.querySelector('#button');
+            const tooltip = document.querySelector('#tooltip');
+            const arrowElement = document.querySelector('#arrow');
+
+            function update() {
+                computePosition(button, tooltip, {
+                    placement: 'bottom-end',
+                    middleware: [
+                        offset(6),
+                        arrow({element: arrowElement})
+                    ],
+                }).then(({x, y, placement, middlewareData}) => {
+                    Object.assign(tooltip.style, {
+                        left: `${x}px`,
+                        top: `${y}px`,
+                    });
+
+                    // Data provdided by arrow()
+                    const {x: arrowX, y: arrowY} = middlewareData.arrow;
+
+                    const staticSide = {
+                        top: 'bottom',
+                        right: 'left',
+                        bottom: 'top',
+                        left: 'right',
+                    }[placement.split('-')[0]];
+
+                    Object.assign(arrowElement.style, {
+                        left: arrowX != null ? `${arrowX}px` : '',
+                        top: arrowY != null ? `${arrowY}px` : '',
+                        right: '',
+                        bottom: '',
+                        [staticSide]: '-4px'
+                    })
+                });
+            }
+
+            function toggleTooltip () {
+                if (tooltip.style.display == 'block') {
+                    tooltip.style.display = '';
+                } else {
+                    tooltip.style.display = 'block';
+                    update();
+                }
+            }
+
+            button.addEventListener('click', function() {
+                toggleTooltip()
+                if (tooltip.style.display == 'block') {
+                    update();
+                }
+            })
+            const lightModeBtn = document.querySelector('#light-mode');
+            const darkModeBtn = document.querySelector('#dark-mode');
+            const systemModeBtn = document.querySelector('#system-mode');
+
+            function updateSelected(container, selection) {
+                container.querySelectorAll('[aria-checked=true]').forEach(prior_selection => {
+                    prior_selection.ariaChecked = false;
+                });
+                selection.ariaChecked = true;
+            }
+
+            // Explicit theme selection
+            lightModeBtn.addEventListener('click', function(event) {
+                updateSelected(tooltip, lightModeBtn)
+                setTheme('light')
+                toggleTooltip()
+            })
+            darkModeBtn.addEventListener('click', () => {
+                updateSelected(tooltip, darkModeBtn)
+                setTheme('dark')
+                toggleTooltip()
+            })
+            systemModeBtn.addEventListener('click', () => {
+                updateSelected(tooltip, systemModeBtn)
+                unsetTheme()
+                toggleTooltip()
+            })
+        </script>
+    </div>
+</div>
+
+        <main
+            class="container mx-auto px-5 max-w-prose pt-8 pb-32"
+        >
+            <h1>DBC day 9</h1>
+
+<p class="text-xs">
+    09 Dec 2023
+    
+    
+        - <a href="/authors/me.html">Daniel Ramirez</a>
+    
+</p>
+
+<p>What is the minimal amount of work for a productive day? How should this be measured? This is my way of saying I wasn’t able to do much.</p>
+
+<h2 id="wins">Wins</h2>
+
+<p>I worked on <a href="https://github.com/coffee-dan/bubble-chess/commit/a273b127f58f609e97781bcc0656fee6d9672fc9">refactor: move []chess.Square -&gt; bitboard to func</a> and happened to not actually commit/push it until time of writing, Mon Dec 11 12:XX AM.</p>
+
+<p>This was pretty rewarding as it was a snippet of code I had theorized was possible for a while but did not actually write until I felt the highlighting feature was done.</p>
+
+<h2 id="notes">Notes</h2>
+
+<p>A lot of my time on this day was absorbed with preparing for having guests over, so cleaning, last minute shopping, cooking, etc. All said this was a good day even if I didn’t finish the whole game in one night. Although it did result in me being <em>very</em> hungover on day 10. 😵‍💫</p>
+
+<h2 id="next">Next</h2>
+
+<ol>
+  <li>auto-complete for moves of all types</li>
+  <li>design work
+    <ul>
+      <li>pen and grid paper</li>
+      <li>design validation system (layout/style/content)</li>
+      <li>design menus (restart/exit/game setup)
+        <ul>
+          <li>downwell, vitetris, galaga, etc.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+
+        </main>
+    </body>
+</html>
