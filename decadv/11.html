@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>DBC day 10</title>
+        <title>DECADV day 10</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😵‍💫</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍷</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,54 +171,46 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>DBC day 10</h1>
+            <h1>DECADV day 10</h1>
 
 <p class="text-xs">
-    10 Dec 2023
+    11 Dec 2023
     
     
         - <a href="/authors/me.html">Daniel Ramirez</a>
     
 </p>
 
-<p>I woke up hungover. Slept until 4pm, handled an incident for my dayjob, slept until 8pm.</p>
+<p>By candlelight, plague-year italian wine, and naïveté</p>
 
 <h2 id="wins">Wins</h2>
+<ul>
+  <li><a href="https://github.com/coffee-dan/bubble-chess/commit/8d516b89fb5a338297f640d378abe8788d941272">feature: naive reverse guess list traversal</a></li>
+  <li><a href="https://github.com/coffee-dan/bubble-chess/commit/a9b515b50f288d0ceba68e85e2c5d0331653d9d6">feature: naive representation of guess cursor</a></li>
+  <li><a href="https://github.com/coffee-dan/bubble-chess/commit/f95c609449a8646c9e3ae8d8a5088603130bdb11">feature: naive live highlight of guess selection</a></li>
+  <li><a href="https://github.com/coffee-dan/bubble-chess/commit/622de25cdff1f183d0d1f694176e9a91cafa397e">feature: naive guess selection</a></li>
+</ul>
 
-<p>Cranked out <a href="https://github.com/coffee-dan/bubble-chess/commit/7a76d41c558f5a5e9914928e84450511fd835931">feature: naive move auto complete suggestion list</a> and I’m pretty happy with the results. Here’s some muscle memory kicking in where I know I would like to hit tab to complete the move command.</p>
-
-<p><img src="/assets/dbc-day-10-suggestion-demo.gif" alt="In terminal chess program demostration of suggestion menu below the board that attempts to guess what move the user is trying to use" /></p>
+<p>It is possible to traverse the guess menu and have it behavior in a relatively intuitive way. Three cheers for the naive approach to things. Is it wrong? Yeah! Can I fix it? Yeah!
+<img src="/assets/decadv-day-11-guess-menu-demo.gif" alt="Bubble chess guess menu working properly" /></p>
 
 <h2 id="notes">Notes</h2>
 
-<p>I’ve been looking at some other sites that are doing DecemberAdventure and wow do these folks know how to style a blog site. Ex:</p>
-<ul>
-  <li><a href="https://wiki.xxiivv.com/site/varvara.html">varvara zine</a></li>
-  <li><a href="https://rabbits.srht.site/decadv/">100rabbits</a></li>
-  <li><a href="https://arcades.agency/index.html">Arcade Wise</a></li>
-</ul>
+<p>Really got a good unstanding of just how simple old-school menu systems are. It’s just a list, a bounding box, and a pointer. Everything else is interaction and render logic. Feels amazing in comparison to centering divs.</p>
 
-<p>A couple of these sites use a template that I really like. It gives this feeling that there is a lot to discover on the site but it the entire site does not reveal itself to you at first blush. You have to actually crawl through the hyperlinks. And as a side note I noticed a few of these folks use C and do low-level stuffs.</p>
+<p>Red wine is a 2020 bottle and I think this is very funny.</p>
 
 <h2 id="next">Next</h2>
 
 <ol>
   <li>tab auto-complete
     <ul>
-      <li>allow user to cycle through guess menu using tab and make sure to update the highlights as this happens</li>
+      <li>behavior after choice is made is very jank, this is expected because the string representation is directly fed into the input box and the string interpretting is using a non-production ready method</li>
     </ul>
+
+    <p><img src="/assets/decadv-day-11-guess-menu-bug.gif" alt="Bubble chess guess menu bug" /></p>
   </li>
-  <li>design work
-    <ul>
-      <li>pen and grid paper</li>
-      <li>design validation system (layout/style/content)</li>
-      <li>design menus (restart/exit/game setup)
-        <ul>
-          <li>downwell, vitetris, galaga, etc.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+  <li>rethink the need for designing?? it seems like i’ve been fine just winging it, perhaps i don’t need to intellectualize about the placement of runes until after the game is 75% done</li>
 </ol>
 
 
