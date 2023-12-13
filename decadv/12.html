@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>Me</title>
+        <title>decadv12</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤠</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍷</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,45 +171,55 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>Daniel Ramirez</h1>
-<h2>Site Author</h2>
+            <h1>decadv12</h1>
 
-<p>I’m the only one that writes here (for now).</p>
+<p class="text-xs">
+    12 Dec 2023
+    
+    
+        - <a href="/authors/me.html">Daniel Ramirez</a>
+    
+</p>
 
+<p>Break the game right before bed</p>
 
-<h2>Posts</h2>
-<ul>
-  
-  
-    <li><a href="/decadv/12">decadv12</a></li>
-  
-    <li><a href="/decadv/11">DECADV 11</a></li>
-  
-    <li><a href="/decadv/10">DBC day 10</a></li>
-  
-    <li><a href="/decadv/9">DBC day 9</a></li>
-  
-    <li><a href="/2023/12/08/DBC-day-8.html">DBC day 8</a></li>
-  
-    <li><a href="/2023/12/07/DBC-day-7.html">Dbc Day 7</a></li>
-  
-    <li><a href="/2023/12/06/DBC-day-6.html">Dbc Day 6</a></li>
-  
-    <li><a href="/2023/12/05/DBC-day-5.html">Dbc Day 5</a></li>
-  
-    <li><a href="/2023/12/04/dbc-day-3-and-4.html">Dbc Day 3 And 4</a></li>
-  
-    <li><a href="/2023/12/02/dbc-day-1-and-2.html">Dbc Day 1 And 2</a></li>
-  
-    <li><a href="/2023/12/01/go-debugging.html">Go Debugging</a></li>
-  
-    <li><a href="/2023/12/01/github-werkflow.html">Github Werkflow</a></li>
-  
-    <li><a href="/2023/08/27/why-go.html">Why Go</a></li>
-  
-    <li><a href="/2023/04/01/all-my-links-are-dead.html">All My Links Are Dead</a></li>
-  
-</ul>
+<h2 id="wins">Wins</h2>
+
+<p>Couple of feature/bugs have been completed/resolved. Moves in the guess list are rendered using valid notation so you can actually see the visual connection between what is being selected and what is being accepted by the system.  Also, the game pays attention to your first character of input instead of giving a free pass.</p>
+
+<p>Board flipping exists! And has introduced a whole new class of problems that I had not accounted for.</p>
+
+<p><img src="/assets/decadv-day-12-demo-and-bug.gif" alt="Bubble chess demonstration of new features and board flip bug" /></p>
+
+<p>Found the crash instantly key-combo:</p>
+
+<p><img src="/assets/decadv-day-12-instant-crash.gif" alt="Bubble chess crashing instantly when shift+tab is pressed" /></p>
+
+<h2 id="notes">Notes</h2>
+
+<p>I spent a bit more time than I would have liked distracted looking the projects/github profiles/personal websites of some of the authors of packages I am using. I was getting a little discourage cause these developers have done so much. But, I can only work from where I am at. I cannot start a cool project like charmbracelet in jan 2020 cause it just isn’t jan 2020.</p>
+
+<h2 id="next">Next</h2>
+
+<ol>
+  <li>highlighting
+    <ul>
+      <li>flip highlighting logic along side board flipping</li>
+      <li>highlight moves that involve capturing</li>
+    </ul>
+  </li>
+  <li>autocomplete
+    <ul>
+      <li>guess menu cuts off for long lists, namely the queen</li>
+    </ul>
+  </li>
+  <li>command line args that accept FEN string for board init
+    <ul>
+      <li>consider using cobra and/or viper (cli args tooling)</li>
+    </ul>
+  </li>
+</ol>
+
 
         </main>
     </body>
