@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>DBC day 8</title>
+        <title>December Seventh</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,55 +171,92 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>DBC day 8</h1>
+            <h1>December Seventh</h1>
 
 <p class="text-xs">
-    08 Dec 2023
+    07 Dec 2023
     
     
         - <a href="/authors/me.html">Daniel Ramirez</a>
     
 </p>
 
-<h1 id="day-8">Day 8</h1>
+<p>On the imprecise semantics of a day on Earth, deleting master, and other administrative tasks</p>
+
+<h1 id="day-7">Day 7?</h1>
 
 <p>Wins:</p>
 <ul>
-  <li>Using Pomodoro to keep on keep late night coding from turning into mental dead ends
+  <li>
+    <p>The blog now has syntax highlighting!</p>
+
+    <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">html</span><span class="p">,</span> <span class="n">ok</span> <span class="o">:=</span> <span class="n">markdown</span><span class="o">.</span><span class="n">renderWithHighlights</span><span class="p">()</span>
+  <span class="k">if</span> <span class="o">!</span><span class="n">ok</span> <span class="p">{</span>
+      <span class="nb">panic</span><span class="p">(</span><span class="s">"Something happened :/"</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="c">// html declared and not used compiler(UnusedVar)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Resolved build errors in Github actions by removing dependency on “slices” package which was definitely a 2am solution that I might have to find a real solution for later
     <ul>
-      <li>smart watch is actually just fine for this, sound is not ideal, visuals can be distracting but a timer on the watch is great cause you can always check to remind yourself but it’s not going to remind you until it’s done.</li>
+      <li>but ¯\_(ツ)_/¯</li>
     </ul>
   </li>
-  <li>Highlighting is MDP (Minimum dog foodable product)
+  <li>Renamed master -&gt; main for blog repo
     <ul>
-      <li>i can live with this level of highlighting behavior</li>
+      <li>finally got convinced this is correct because it
+        <ul>
+          <li>a: does not fit the database master-slave process pattern of thinking/behavior
+            <ul>
+              <li>neither the origin/main nor the production/main dictate the behavior of local main</li>
+            </ul>
+          </li>
+          <li>b: does not fit the music industry master record model (the definitive copy)
+            <ul>
+              <li>“definitive” is a weird way to describe something that can change daily including forward and backward changes</li>
+            </ul>
+          </li>
+          <li>it’s a dang misnomer</li>
+          <li>now just a few years before i start insisting upon trunk :0)</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
 
 <p>Notes:</p>
 <ul>
-  <li>Need to find a decent workflow for creating gifs to show of the highlighting</li>
-</ul>
-
-<p>Next:</p>
-<ul>
-  <li>auto-complete for moves of all types
+  <li>a day is what fits your perception of a day
     <ul>
-      <li>should assist with situations like:
+      <li>sometimes a lot happens in a day with clear dividing lines and i think that is two days</li>
+      <li>sometimes you stay up very late and the boundary of the day is extended by a lot
         <ul>
-          <li>named pieces <code class="language-plaintext highlighter-rouge">b1c3</code> tab -&gt; <code class="language-plaintext highlighter-rouge">Nb1c3</code></li>
-          <li>captures <code class="language-plaintext highlighter-rouge">e4d5</code> tab -&gt; <code class="language-plaintext highlighter-rouge">e4xd5</code></li>
-        </ul>
-      </li>
-      <li>thinking of a system where on each input change the system recalculates autocomplete candidates
-        <ul>
-          <li>renders as tab-navigable list</li>
-          <li>ranked? based on something</li>
+          <li>as you may have guessed i stayed up until like 4am and slept before i could post :–)</li>
         </ul>
       </li>
     </ul>
   </li>
+  <li>Blog things
+    <ul>
+      <li>would like to have DBC show up as an acronym</li>
+      <li>probably need spellcheck for markdown files</li>
+    </ul>
+  </li>
+  <li>General things
+    <ul>
+      <li>asap gonna start working on building a PC (linux) for the first time wowowowow
+        <ul>
+          <li>so slightly less time for coding, but then i will be on winter PTO so it shakes out. double december adventure_!_</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Next:</p>
+<ul>
+  <li>continue work on highlighting</li>
+  <li>think about auto complete system</li>
   <li>design work
     <ul>
       <li>decide on product for this, need to consider ASCII limitation and might have to avoid a general design software like miro/figma/etc.</li>

@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>Dbc Day 7</title>
+        <title>December First and Second</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕸️</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,53 +171,72 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>Dbc Day 7</h1>
+            <h1>December First and Second</h1>
 
 <p class="text-xs">
-    07 Dec 2023
+    02 Dec 2023
     
     
         - <a href="/authors/me.html">Daniel Ramirez</a>
     
 </p>
 
-<p>On the imprecise semantics of a day on Earth, deleting master, and other administrative tasks</p>
+<p>December Build Club</p>
 
-<h1 id="day-7">Day 7?</h1>
+<h3 id="december-build-club">December Build Club?</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Work on a project everyday for a month (December) to get it off the ground.
+</code></pre></div></div>
+
+<h1 id="day-1">Day 1</h1>
+
+<p>Stepped into an old project, Bubble Chess, which has the goal of helping a Chess novice develop an intuition for Algebraic notation. This will be done in the terminal using the Terminal UI framework named Bubbletea which implements a Model-View-Update pattern that I haven’t worked with before this but quite like.</p>
+
+<p>Wins for the day:</p>
+<ul>
+  <li>Documented the debugging process before I forgot about it forever
+    <ul>
+      <li>Had to use <code class="language-plaintext highlighter-rouge">cat ~/.githistory | fzf</code> to figure out what I had been doing months ago</li>
+    </ul>
+  </li>
+  <li>Descoped the project
+    <ul>
+      <li>I will be targeting MacOS/Zsh/Alacritty and making no consideration for the weird color behavior in VSCode/xterm.js</li>
+      <li>I will be solely creating a terminal app during this December, the in-browser WASM app will have to wait</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Next:</p>
+<ul>
+  <li>Refactor color handling given scope change</li>
+  <li>Create tutorial notifications (errors, hints, etc)</li>
+  <li>Create highlighting system
+    <ul>
+      <li>Start with highlighting column when user types in column header</li>
+      <li>Create data structure for highlight state (bitboard?)</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="day-2">Day 2</h1>
 
 <p>Wins:</p>
 <ul>
-  <li>
-    <p>The blog now has syntax highlighting!</p>
-
-    <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">html</span><span class="p">,</span> <span class="n">ok</span> <span class="o">:=</span> <span class="n">markdown</span><span class="o">.</span><span class="n">renderWithHighlights</span><span class="p">()</span>
-  <span class="k">if</span> <span class="o">!</span><span class="n">ok</span> <span class="p">{</span>
-      <span class="nb">panic</span><span class="p">(</span><span class="s">"Something happened :/"</span><span class="p">)</span>
-  <span class="p">}</span>
-  <span class="c">// html declared and not used compiler(UnusedVar)</span>
-</code></pre></div>    </div>
-  </li>
-  <li>Resolved build errors in Github actions by removing dependency on “slices” package which was definitely a 2am solution that I might have to find a real solution for later
+  <li>Updated visuals
     <ul>
-      <li>but ¯\_(ツ)_/¯</li>
+      <li>Colors now using <code class="language-plaintext highlighter-rouge">lipgloss.CompleteColor{}</code> which gives granular control over colors used for various levels of color-support</li>
     </ul>
   </li>
-  <li>Renamed master -&gt; main for blog repo
+  <li>Fixed long-standing bug
     <ul>
-      <li>finally got convinced this is correct because it
+      <li>I wasn’t updating the move history when the enemy moved</li>
+    </ul>
+  </li>
+  <li>Working on highlightBoard using bitboard
+    <ul>
+      <li>I confirmed this was a reasonable starting point by reading the chess go pkg source. At this point I have a copy locally that I check frequently.
         <ul>
-          <li>a: does not fit the database master-slave process pattern of thinking/behavior
-            <ul>
-              <li>neither the origin/main nor the production/main dictate the behavior of local main</li>
-            </ul>
-          </li>
-          <li>b: does not fit the music industry master record model (the definitive copy)
-            <ul>
-              <li>“definitive” is a weird way to describe something that can change daily including forward and backward changes</li>
-            </ul>
-          </li>
-          <li>it’s a dang misnomer</li>
-          <li>now just a few years before i start insisting upon trunk :0)</li>
+          <li>With this window include I am now using 3 instances of VSCode at a time, it has struck me that maybe I could find a better way to do this but maybe much later.</li>
         </ul>
       </li>
     </ul>
@@ -226,42 +245,28 @@
 
 <p>Notes:</p>
 <ul>
-  <li>a day is what fits your perception of a day
+  <li>Unfocused
     <ul>
-      <li>sometimes a lot happens in a day with clear dividing lines and i think that is two days</li>
-      <li>sometimes you stay up very late and the boundary of the day is extended by a lot
+      <li>I spent a lot of time working on my blog just cause I had it open writing the DBC post.
         <ul>
-          <li>as you may have guessed i stayed up until like 4am and slept before i could post :–)</li>
+          <li>Created my own problem by updating the Gemfile to include ruby-lsp and then quickly having to reinstall the Github support Ruby to bundle after a few failed deploys</li>
         </ul>
       </li>
     </ul>
   </li>
-  <li>Blog things
+  <li>Time-eater
     <ul>
-      <li>would like to have DBC show up as an acronym</li>
-      <li>probably need spellcheck for markdown files</li>
-    </ul>
-  </li>
-  <li>General things
-    <ul>
-      <li>asap gonna start working on building a PC (linux) for the first time wowowowow
-        <ul>
-          <li>so slightly less time for coding, but then i will be on winter PTO so it shakes out. double december adventure_!_</li>
-        </ul>
-      </li>
+      <li>Didn’t define timeblock for project work so that ate into rest of the day</li>
     </ul>
   </li>
 </ul>
 
 <p>Next:</p>
 <ul>
-  <li>continue work on highlighting</li>
-  <li>think about auto complete system</li>
-  <li>design work
+  <li>Find good strategy for reading and writing to/from a bitboard</li>
+  <li>Implement popover notifications
     <ul>
-      <li>decide on product for this, need to consider ASCII limitation and might have to avoid a general design software like miro/figma/etc.</li>
-      <li>design validation system (layout/style/content)</li>
-      <li>design menus (restart/exit/game setup)</li>
+      <li>likely using lipgloss formatting utils</li>
     </ul>
   </li>
 </ul>

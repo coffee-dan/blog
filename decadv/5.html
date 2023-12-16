@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>Dbc Day 1 And 2</title>
+        <title>December Fifth</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕸️</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏃</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,104 +171,58 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>Dbc Day 1 And 2</h1>
+            <h1>December Fifth</h1>
 
 <p class="text-xs">
-    02 Dec 2023
+    05 Dec 2023
     
     
         - <a href="/authors/me.html">Daniel Ramirez</a>
     
 </p>
 
-<p>December Build Club</p>
+<p>Two weeks notice, <code class="language-plaintext highlighter-rouge">slices.Contains()</code>, and Italian red wine</p>
 
-<h3 id="december-build-club">December Build Club?</h3>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Work on a project everyday for a month (December) to get it off the ground.
-</code></pre></div></div>
-
-<h1 id="day-1">Day 1</h1>
-
-<p>Stepped into an old project, Bubble Chess, which has the goal of helping a Chess novice develop an intuition for Algebraic notation. This will be done in the terminal using the Terminal UI framework named Bubbletea which implements a Model-View-Update pattern that I haven’t worked with before this but quite like.</p>
-
-<p>Wins for the day:</p>
-<ul>
-  <li>Documented the debugging process before I forgot about it forever
-    <ul>
-      <li>Had to use <code class="language-plaintext highlighter-rouge">cat ~/.githistory | fzf</code> to figure out what I had been doing months ago</li>
-    </ul>
-  </li>
-  <li>Descoped the project
-    <ul>
-      <li>I will be targeting MacOS/Zsh/Alacritty and making no consideration for the weird color behavior in VSCode/xterm.js</li>
-      <li>I will be solely creating a terminal app during this December, the in-browser WASM app will have to wait</li>
-    </ul>
-  </li>
-</ul>
-
-<p>Next:</p>
-<ul>
-  <li>Refactor color handling given scope change</li>
-  <li>Create tutorial notifications (errors, hints, etc)</li>
-  <li>Create highlighting system
-    <ul>
-      <li>Start with highlighting column when user types in column header</li>
-      <li>Create data structure for highlight state (bitboard?)</li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="day-2">Day 2</h1>
+<h1 id="day-5">Day 5</h1>
 
 <p>Wins:</p>
 <ul>
-  <li>Updated visuals
+  <li>Available as of 8pm 🗣️</li>
+  <li>Implemented first and second character highlighting as described in day 4 “Next”
     <ul>
-      <li>Colors now using <code class="language-plaintext highlighter-rouge">lipgloss.CompleteColor{}</code> which gives granular control over colors used for various levels of color-support</li>
+      <li>one character/rune filters to pieces in that column</li>
+      <li>two characters/runes filers to possibles moves for that specific piece</li>
     </ul>
   </li>
-  <li>Fixed long-standing bug
+  <li>Updated colors used by highlighting to not be eye-searing without straying too far from the base ANSI color set</li>
+  <li>Picture
     <ul>
-      <li>I wasn’t updating the move history when the enemy moved</li>
-    </ul>
-  </li>
-  <li>Working on highlightBoard using bitboard
-    <ul>
-      <li>I confirmed this was a reasonable starting point by reading the chess go pkg source. At this point I have a copy locally that I check frequently.
-        <ul>
-          <li>With this window include I am now using 3 instances of VSCode at a time, it has struck me that maybe I could find a better way to do this but maybe much later.</li>
-        </ul>
-      </li>
+      <li><img src="/assets/dbc-day-5-possible-move-highlights.png" alt="chess board inside terminal with B1 as player input and the potential moves for the knight at the position highlighted, proving the new feature works" /></li>
     </ul>
   </li>
 </ul>
 
 <p>Notes:</p>
 <ul>
-  <li>Unfocused
-    <ul>
-      <li>I spent a lot of time working on my blog just cause I had it open writing the DBC post.
-        <ul>
-          <li>Created my own problem by updating the Gemfile to include ruby-lsp and then quickly having to reinstall the Github support Ruby to bundle after a few failed deploys</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Time-eater
-    <ul>
-      <li>Didn’t define timeblock for project work so that ate into rest of the day</li>
-    </ul>
-  </li>
+  <li>Got home later than usual so perhaps another day will be even better than this</li>
+  <li>Have a date planned for Thursday this week so perhaps that day will be kinda lost, not sure how to handle days like this within the “December Build Club” or i guess “December Adventure”</li>
+  <li>Red wine was good, got it from Whole Foods on a whim cause I was there for an Amazon package</li>
 </ul>
 
 <p>Next:</p>
 <ul>
-  <li>Find good strategy for reading and writing to/from a bitboard</li>
-  <li>Implement popover notifications
+  <li>Continue work on highlighting
     <ul>
-      <li>likely using lipgloss formatting utils</li>
+      <li>three runes filters to all possible moves for that piece on the specific
+        <ul>
+          <li>ex: e2e</li>
+        </ul>
+      </li>
+      <li>fully-specified moves must transition to validation system that is not designed yet</li>
     </ul>
   </li>
+  <li>define validation system (see day 4)</li>
+  <li>restarting game and other considerations for menuing (see day 4)</li>
 </ul>
 
 

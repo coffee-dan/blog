@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>Dbc Day 6</title>
+        <title>December Third and Fourth</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐱</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏃</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,80 +171,117 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>Dbc Day 6</h1>
+            <h1>December Third and Fourth</h1>
 
 <p class="text-xs">
-    06 Dec 2023
+    04 Dec 2023
     
     
         - <a href="/authors/me.html">Daniel Ramirez</a>
     
 </p>
 
-<p>Cat coding companion, func born to die, commit to move on</p>
+<p>Hectic schedule, uint64, and Malt Ale</p>
 
-<h1 id="day-5">Day 5</h1>
+<h1 id="day-3">Day 3</h1>
 
-<p>Wins:</p>
+<p>Wins for the day:</p>
 <ul>
-  <li>Finished three-rune highlighting
+  <li>Figured out exactly how I would like to structure <code class="language-plaintext highlighter-rouge">func (m *Model) highlightColumn(colHeader string)</code>
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">b1c</code> highlights the B-file knight’s right hand move</li>
+      <li>I will be holding on to a bitboard that describes the current highlighted squares and on each input change this will be updated by ANDing or XORing the bitboard with uint64 bitmasks (i think that’s the term) built via taking two to the power of the indexes that need their values updated
+        <ul>
+          <li>Had to introduce the short-lived <code class="language-plaintext highlighter-rouge">func intPow(n, m int) int</code> for this</li>
+        </ul>
+      </li>
+      <li>It did not work :)</li>
+      <li>In the shower after the second coding session of the day (busy day) it occurred to me it would likely be less expensive to construct a string every time and then parse to binary and cast to uint64</li>
     </ul>
   </li>
-  <li>Started single-rune piece-type highlighting
+  <li>Pictures
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">N</code> highlights all knights</li>
-    </ul>
-  </li>
-  <li>Determined lots of my rough draft code will be replaced soon!
-    <ul>
-      <li>I’ve gotten good at writing functions quickly to express the idea in my head so that as my understanding of the goal/problem improves I can rip up the funcs laid down right behind me to place new funcs in front of me.</li>
-      <li>This likely looks like a intuitive understanding of the “don’t prematurely optimize” nugget of wisdom.</li>
+      <li>Initial Board
+  <img src="/assets/dbc-day-3-init-board.png" alt="chess board inside terminal with simple prompts for player input" /></li>
+      <li>Broken Highlight
+  <img src="/assets/dbc-day-3-broken-highlight-1.png" alt="chess board inside terminal with E as player input and D8 highlighted, this of course being not helpful information" /></li>
+      <li>Even more broken
+  <img src="/assets/dbc-day-3-broken-highlight-2.png" alt="chess board inside terminal with Efoobar as player input and D8 highlighted, this is even less helpful than the last highlight" />
+  highlight only changes if another highlight can take it’s place</li>
     </ul>
   </li>
 </ul>
 
 <p>Notes:</p>
 <ul>
-  <li>My cat decided to sleep next to me while I’m writing tonight, look at him
-    <ul>
-      <li><img src="/assets/dbc-day-6-gus.png" alt="a very normal looking cat sleeping on a grey blanket" /></li>
-    </ul>
-  </li>
-  <li>Some func-y Golang stuff is going on
-    <ul>
-      <li>CI pipeline cannot build project for some reason. Devoops
-        <ul>
-          <li>Which on that note I don’t have any tests at the moment, that might be worth addressing soon</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+  <li>Still some tough spots from no time blocking</li>
 </ul>
 
 <p>Next:</p>
 <ul>
-  <li>continue work on highlighting
+  <li>Fix highlight system
     <ul>
-      <li>named moves need to mesh into the existing one-two-three rune highlighting progression</li>
+      <li>Construct highlight bitboard on each input update</li>
     </ul>
   </li>
-  <li>think about auto complete system
+  <li>Replace existing tutorial notifications (errors, hints, etc)
     <ul>
-      <li>seems like the easiest way to convey non-obvious movements like capturing, assisting users with including piece names in their move command</li>
-      <li>really like the zsh behavior for tabbing between possible options where each option updates the content of the command line as you select
+      <li>Currently there’s a basic validation system the is shoved right above the input field and does not have enough room to be legible</li>
+      <li>Likely popovers?</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="day-4">Day 4</h1>
+
+<p>Wins:</p>
+<ul>
+  <li>Time blocked from 10pm to 1am :–)
+    <ul>
+      <li>and i got some Dead Guy Ale during my Monday errands (6/10 would buy again in a pinch)</li>
+    </ul>
+  </li>
+  <li>Fixed the column highlights, now have basic full column</li>
+</ul>
+
+<p>Notes:</p>
+<ul>
+  <li>Was not actually able to keep working past midnight, the tiredness got to me</li>
+</ul>
+
+<p>Next:</p>
+<ul>
+  <li>Move specific highlighting based on filtering a combination of all pieces on board and all moves that can be made
+    <ul>
+      <li>one rune filters to pieces in that column
         <ul>
-          <li><code class="language-plaintext highlighter-rouge">cd </code> and then tab tab tab</li>
+          <li>ex: e</li>
         </ul>
       </li>
+      <li>two runes filters to possible moves for the piece on the specific square
+        <ul>
+          <li>ex: e2</li>
+        </ul>
+      </li>
+      <li>three runes filters to all possible moves for that piece on the specific
+        <ul>
+          <li>ex: e2e</li>
+        </ul>
+      </li>
+      <li>fully-specified moves must transition to validation system that is not designed yet</li>
     </ul>
   </li>
-  <li>design work
+  <li>define validation system
     <ul>
-      <li>miro?</li>
-      <li>design validation system (layout/style/content)</li>
-      <li>design menus (restart/exit/game setup)</li>
+      <li>perhaps text box with eye catching board that appears to the left of the board since that as of now the board is <em>right</em> up against the terminal window</li>
+    </ul>
+  </li>
+  <li>restarting game? and other considerations for menuing
+    <ul>
+      <li>maybe game starts immediately on entering based on command line args but the user can at anytime restart based on args OR go to interactive game setup menu
+        <ul>
+          <li>similar to vitetris</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
