@@ -726,6 +726,10 @@ ul {
   border-radius: 0.375rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-r-2 {
   border-right-width: 2px;
 }
