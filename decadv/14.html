@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>DBC day 9</title>
+        <title>decadv14</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍻</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕺</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,41 +171,48 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>DBC day 9</h1>
+            <h1>decadv14</h1>
 
 <p class="text-xs">
-    09 Dec 2023
+    14 Dec 2023
     
     
         - <a href="/authors/me.html">Daniel Ramirez</a>
     
 </p>
 
-<p>What is the minimal amount of work for a productive day? How should this be measured? This is my way of saying I wasn’t able to do much.</p>
+<p>PBR, the eternal hole in my heart left by day 13, and freedom</p>
 
 <h2 id="wins">Wins</h2>
 
-<p>I worked on <a href="https://github.com/coffee-dan/bubble-chess/commit/a273b127f58f609e97781bcc0656fee6d9672fc9">refactor: move []chess.Square -&gt; bitboard to func</a> and happened to not actually commit/push it until time of writing, Mon Dec 11 12:XX AM.</p>
+<p>Got back on the horse after completely skipping day 13. Had to skip because of an incident related to my day job. Didn’t actually get much done on this day (fell asleep before I could even post this).</p>
 
-<p>This was pretty rewarding as it was a snippet of code I had theorized was possible for a while but did not actually write until I felt the highlighting feature was done.</p>
+<p>I figured out what I need to do for handling board flipping. There’s a Go package for performing some basic operations on uint64 data. I need to use grid paper to actually understand what is happening with this stuff and how it <em>should</em> look to simulate the board rotating to the other player’s POV.</p>
+
+<p>Trying out a spellchecker. streetsidesoftware.code-spell-checker</p>
 
 <h2 id="notes">Notes</h2>
 
-<p>A lot of my time on this day was absorbed with preparing for having guests over, so cleaning, last minute shopping, cooking, etc. All said this was a good day even if I didn’t finish the whole game in one night. Although it did result in me being <em>very</em> hungover on day 10. 😵‍💫</p>
+<p>There is a really pernicious mental trap in thinking that it is necessary to make up for a lost day/hour/time-quantum. I missed a day and I wanted to work extra hard on the next day. But, what I need is to do something on that next day. Just restart the streak and move on. Missing a day is not the deciding factor in this adventure.</p>
 
 <h2 id="next">Next</h2>
 
 <ol>
-  <li>auto-complete for moves of all types</li>
-  <li>design work
+  <li>highlighting
     <ul>
-      <li>pen and grid paper</li>
-      <li>design validation system (layout/style/content)</li>
-      <li>design menus (restart/exit/game setup)
-        <ul>
-          <li>Downwell, vitetris, Galaga, etc.</li>
-        </ul>
-      </li>
+      <li>find the correct approach for conditionally rendering visual boards along side the game board</li>
+      <li>is there a way to access the boards in a different way rather than modifying the entire thing on each tick?</li>
+    </ul>
+  </li>
+  <li>autocomplete
+    <ul>
+      <li>guess menu cuts off for long lists, namely the queen</li>
+      <li>guess menu tab-ing does not work when list is only one move long</li>
+    </ul>
+  </li>
+  <li>command line args that accept FEN string for board init
+    <ul>
+      <li>consider using cobra and/or viper (cli args tooling)</li>
     </ul>
   </li>
 </ol>

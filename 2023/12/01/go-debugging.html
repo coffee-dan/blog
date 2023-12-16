@@ -181,7 +181,7 @@
     
 </p>
 
-<p>Description of options for debugging standalone go program (not a webserver).</p>
+<p>Description of options for debugging standalone go program (not a web server).</p>
 
 <h2 id="vscode-in-ide-debugger">VSCode In-IDE Debugger</h2>
 
@@ -212,7 +212,7 @@
 <h3 id="bubbletea">bubbletea</h3>
 
 <ol>
-  <li>Insert logToFile somewhwere near entry point to program
+  <li>Insert logToFile somewhere near entry point to program
     <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"DEBUG"</span><span class="p">))</span> <span class="o">&gt;</span> <span class="m">0</span> <span class="p">{</span>
  <span class="n">f</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">tea</span><span class="o">.</span><span class="n">LogToFile</span><span class="p">(</span><span class="s">"debug.log"</span><span class="p">,</span> <span class="s">"debug"</span><span class="p">)</span>
  <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>

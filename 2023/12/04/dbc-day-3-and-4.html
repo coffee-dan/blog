@@ -191,16 +191,16 @@
     <ul>
       <li>I will be holding on to a bitboard that describes the current highlighted squares and on each input change this will be updated by ANDing or XORing the bitboard with uint64 bitmasks (i think that’s the term) built via taking two to the power of the indexes that need their values updated
         <ul>
-          <li>Had to introduce the shortlived <code class="language-plaintext highlighter-rouge">func intPow(n, m int) int</code> for this</li>
+          <li>Had to introduce the short-lived <code class="language-plaintext highlighter-rouge">func intPow(n, m int) int</code> for this</li>
         </ul>
       </li>
       <li>It did not work :)</li>
-      <li>In the shower after the second coding session of the day (bizy day) it occurred to me it would likely be less expensive to construct a string every time and then parse to binary and cast to uint64</li>
+      <li>In the shower after the second coding session of the day (busy day) it occurred to me it would likely be less expensive to construct a string every time and then parse to binary and cast to uint64</li>
     </ul>
   </li>
   <li>Pictures
     <ul>
-      <li>Inital Board
+      <li>Initial Board
   <img src="/assets/dbc-day-3-init-board.png" alt="chess board inside terminal with simple prompts for player input" /></li>
       <li>Broken Highlight
   <img src="/assets/dbc-day-3-broken-highlight-1.png" alt="chess board inside terminal with E as player input and D8 highlighted, this of course being not helpful information" /></li>
