@@ -3,7 +3,7 @@ author: me
 favicon: 🤖
 ---
 
-Description of options for debugging standalone go program (not a webserver).
+Description of options for debugging standalone go program (not a web server).
 
 ## VSCode In-IDE Debugger
 
@@ -32,7 +32,7 @@ end
 
 ### bubbletea
 
-1. Insert logToFile somewhwere near entry point to program
+1. Insert logToFile somewhere near entry point to program
 ```go
 if len(os.Getenv("DEBUG")) > 0 {
     f, err := tea.LogToFile("debug.log", "debug")
