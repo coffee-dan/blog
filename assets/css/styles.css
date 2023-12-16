@@ -613,6 +613,10 @@ ul {
   margin-bottom: 0px;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -635,6 +639,10 @@ ul {
 
 .flex {
   display: flex;
+}
+
+.table {
+  display: table;
 }
 
 .grid {
@@ -684,10 +692,6 @@ ul {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.list-none {
-  list-style-type: none;
 }
 
 .items-center {
@@ -772,6 +776,10 @@ ul {
   padding-top: 2rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -789,6 +797,10 @@ ul {
 
 .font-bold {
   font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .text-stone-400 {

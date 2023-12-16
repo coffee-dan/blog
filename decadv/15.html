@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>Blog</title>
+        <title>December Fifteenth</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤠</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍅</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,115 +171,53 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <img src="/assets/decadv.png">
+            <h1>December Fifteenth</h1>
 
-<blockquote class="italic mb-1">
-    <p>
-        The December Adventure is low key. The goal is to write a little bit of code every day in December.
-        <br>
-        ~ <a href="https://eli.li/december-adventure">Eli</a>
-    </p>
-</blockquote>
+<p class="text-xs">
+    15 Dec 2023
+    
+    
+        - <a href="/authors/me.html">Daniel Ramirez</a>
+    
+</p>
 
-Working on Bubble Chess, a simple chess tui.
+<p>Four tomatoes, more PBR</p>
 
-<table>
-    <tbody>
-        <tr>
-            <td
-                colspan="7"
-                class="text-center"
-            >December 2023</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><a href="/decadv/1">1</a></td>
-            <td><a href="/decadv/1">2</a></td>
-        </tr>
-        <tr>
-            <td><a href="/decadv/3">3</a></td>
-            <td><a href="/decadv/3">4</a></td>
-            <td><a href="/decadv/5">5</a></td>
-            <td><a href="/decadv/6">6</a></td>
-            <td><a href="/decadv/7">7</a></td>
-            <td><a href="/decadv/8">8</a></td>
-            <td><a href="/decadv/9">9</a></td>
-        </tr>
-        <tr>
-            <td><a href="/decadv/10">10</a></td>
-            <td><a href="/decadv/11">11</a></td>
-            <td><a href="/decadv/12">12</a></td>
-            <td>13</td>
-            <td><a href="/decadv/14">14</a></td>
-            <td><a href="/decadv/15">15</a></td>
-            <td>16</td>
-        </tr>
-        <tr>
-            <td>17</td>
-            <td>18</td>
-            <td>19</td>
-            <td>20</td>
-            <td>21</td>
-            <td>22</td>
-            <td>23</td>
-        </tr>
-        <tr>
-            <td>24</td>
-            <td>25</td>
-            <td>26</td>
-            <td>27</td>
-            <td>28</td>
-            <td>29</td>
-            <td>30</td>
-        </tr>
-        <tr>
-            <td>31</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+<h2 id="wins">Wins</h2>
 
-<h2>Latest Posts</h2>
+<p>Four (4) whole pomodoro timers worth of work.</p>
 
+<p>Fixed board flipping such that it is good enough to move on.</p>
 
-    <h2 class="border-none mb-0">
-        <a href="/decadv/15">December Fifteenth</a>
-    </h2>
-    <p>Four tomatoes, more PBR</p>
+<h2 id="notes">Notes</h2>
 
+<p>It seems like viewports are not the right choice for all the UI elements that I am using them for. A viewport is essentially a bubbletea implementation of a terminal pager. This is not appropriate for elements that wont be changing size and/or should not vertically scroll and is likely the source of the autocomplete display woes.</p>
 
-    <h2 class="border-none mb-0">
-        <a href="/decadv/14">December Fourteenth</a>
-    </h2>
-    <p>PBR, the eternal hole in my heart left by day 13, and freedom</p>
+<h2 id="next">Next</h2>
 
-
-    <h2 class="border-none mb-0">
-        <a href="/decadv/12">December Twelfth</a>
-    </h2>
-    <p>Break the game right before bed</p>
-
-
-    <h2 class="border-none mb-0">
-        <a href="/decadv/11">December Eleventh</a>
-    </h2>
-    <p>By candlelight, plague-year italian wine, and naiveté</p>
-
-
-    <h2 class="border-none mb-0">
-        <a href="/decadv/10">December Tenth</a>
-    </h2>
-    <p>I woke up hungover. Slept until 4pm, handled an incident for my day job, slept until 8pm.</p>
-
+<ol>
+  <li>autocomplete
+    <ul>
+      <li>guess menu cuts off for long lists, namely the queen</li>
+      <li>guess menu tab-ing does not work when list is only one move long</li>
+    </ul>
+  </li>
+  <li>command line args that accept FEN string for board init
+    <ul>
+      <li>consider using cobra and/or viper (cli args tooling)</li>
+    </ul>
+  </li>
+  <li>credits
+    <ul>
+      <li>series of pages that can be flipped through with ascii art representing each direct dependency author</li>
+    </ul>
+  </li>
+  <li>highlighting
+    <ul>
+      <li>is there a way to access the boards in a different way rather than modifying the entire thing on each tick?</li>
+    </ul>
+  </li>
+</ol>
 
 
         </main>
