@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>Blog</title>
+        <title>December Seventeenth</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤠</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍🤝‍🧑</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,132 +171,25 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <img src="/assets/decadv.png">
+            <h1>December Seventeenth</h1>
 
-<blockquote class="italic mb-1">
-    <p>
-        The December Adventure is low key. The goal is to write a little bit of code every day in December.
-        <br>
-        ~ <a href="https://eli.li/december-adventure">Eli</a>
-    </p>
-</blockquote>
+<p class="text-xs">
+    17 Dec 2023
+    
+    
+        - <a href="/authors/me.html">Daniel Ramirez</a>
+    
+</p>
 
-Working on Bubble Chess, a simple chess tui.
+<p>Visiting friends, friends visiting, and some code</p>
 
-<table>
-    <tbody>
-        <tr>
-            <td
-                colspan="7"
-                class="text-center"
-            >December 2023</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><a href="/decadv/1">1</a></td>
-            <td><a href="/decadv/1">2</a></td>
-        </tr>
-        <tr>
-            <td><a href="/decadv/3">3</a></td>
-            <td><a href="/decadv/3">4</a></td>
-            <td><a href="/decadv/5">5</a></td>
-            <td><a href="/decadv/6">6</a></td>
-            <td><a href="/decadv/7">7</a></td>
-            <td><a href="/decadv/8">8</a></td>
-            <td><a href="/decadv/9">9</a></td>
-        </tr>
-        <tr>
-            <td><a href="/decadv/10">10</a></td>
-            <td><a href="/decadv/11">11</a></td>
-            <td><a href="/decadv/12">12</a></td>
-            <td>13</td>
-            <td><a href="/decadv/14">14</a></td>
-            <td><a href="/decadv/15">15</a></td>
-            <td><a href="/decadv/16">16</a></td>
-        </tr>
-        <tr>
-            <td><a href="/decadv/17">17</a></td>
-            <td>18</td>
-            <td>19</td>
-            <td>20</td>
-            <td>21</td>
-            <td>22</td>
-            <td>23</td>
-        </tr>
-        <tr>
-            <td>24</td>
-            <td>25</td>
-            <td>26</td>
-            <td>27</td>
-            <td>28</td>
-            <td>29</td>
-            <td>30</td>
-        </tr>
-        <tr>
-            <td>31</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+<p>I made a minor refactor, replaced a usage of <code class="language-plaintext highlighter-rouge">viewport.Model</code> with <code class="language-plaintext highlighter-rouge">string</code>. I think it’s a small win that points towards actually understanding what these components are for, when they should be used and what to reach for otherwise. In this case <code class="language-plaintext highlighter-rouge">guessMenu</code> is a cached rendering of <code class="language-plaintext highlighter-rouge">guessList</code> (perhaps not the best naming convention) so it can be as simple as a string.</p>
 
-<strong>Autocomplete (1)</strong>
-<div><input type="checkbox" checked disabled> basic autocomplete</div>
-<div><input type="checkbox" disabled> [bug] guess menu tab-ing does not work when list is only one move long</div>
-<br>
-<strong class="mt-1">Command line args (2)</strong>
-<div><input type="checkbox" disabled> help menu</div>
-<div><input type="checkbox" disabled> fen string for board init</div>
-<div><input type="checkbox" disabled> test cobra and/or viper (cli args tooling)</div>
-<br>
-<strong>Credits (3)</strong>
-<p>series of pages that can be flipped through with ascii art representing each direct dependency author</p>
-<div><input type="checkbox" disabled> basic credits (bubbletea, notnil/chess, golang)</div>
-<br>
-<strong>Highlighting (99)</strong>
-<div><input type="checkbox" checked disabled> basic autocomplete</div>
-<div><input type="checkbox" disabled> [refactor] is there a way to access the boards in a different way rather than modifying the entire thing on each tick?</div>
+<p>Had a super busy day so I knocked out at 7:30pm with not a spare second to consider writing about what I had done early that day (at time of writing it is dec18 11:53pm).</p>
 
-<h2>Latest Posts</h2>
+<h2 id="next">Next</h2>
 
-
-    <h2 class="border-none mb-0">
-        <a href="/decadv/17">December Seventeenth</a>
-    </h2>
-    <p>Visiting friends, friends visiting, and some code</p>
-
-
-    <h2 class="border-none mb-0">
-        <a href="/decadv/16">December Sixteenth</a>
-    </h2>
-    <p>Writing on busy day, lipstick on a pig, and putting the pig on a diet</p>
-
-
-    <h2 class="border-none mb-0">
-        <a href="/decadv/15">December Fifteenth</a>
-    </h2>
-    <p>Four tomatoes, more PBR</p>
-
-
-    <h2 class="border-none mb-0">
-        <a href="/decadv/14">December Fourteenth</a>
-    </h2>
-    <p>PBR, the eternal hole in my heart left by day 13, and freedom</p>
-
-
-    <h2 class="border-none mb-0">
-        <a href="/decadv/12">December Twelfth</a>
-    </h2>
-    <p>Break the game right before bed</p>
-
+<p>Found on <a href="/blog.html">blog index</a>.</p>
 
 
         </main>
