@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0", name="viewport">
-        <title>Me</title>
+        <title>December Twenty-Ninth</title>
         <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤠</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet">
@@ -171,75 +171,33 @@
         <main
             class="container mx-auto px-5 max-w-prose pt-8 pb-32"
         >
-            <h1>Daniel Ramirez</h1>
-<h2>Site Author</h2>
+            <h1>December Twenty-Ninth</h1>
 
-<p>I’m the only one that writes here (for now).</p>
+<p class="text-xs">
+    30 Dec 2023
+    
+    
+        - <a href="/authors/me.html">Daniel Ramirez</a>
+    
+</p>
 
+<p>All talk no code</p>
 
-<h2>Posts</h2>
-<ul>
-  
-  
-    <li><a href="/decadv/29">December Twenty-Ninth</a></li>
-  
-    <li><a href="/decadv/28">December Twenty-Eighth</a></li>
-  
-    <li><a href="/decadv/27">December Twenty-Seventh</a></li>
-  
-    <li><a href="/decadv/26">December Twenty-Sixth</a></li>
-  
-    <li><a href="/decadv/25">Christmas Eve and Day</a></li>
-  
-    <li><a href="/decadv/23">December Twenty-Third</a></li>
-  
-    <li><a href="/decadv/22">December Twenty-Second</a></li>
-  
-    <li><a href="/decadv/21">December Twenty-First</a></li>
-  
-    <li><a href="/decadv/20">December Twentieth</a></li>
-  
-    <li><a href="/decadv/19">December Nineteenth</a></li>
-  
-    <li><a href="/decadv/18">December Eighteenth</a></li>
-  
-    <li><a href="/decadv/17">December Seventeenth</a></li>
-  
-    <li><a href="/decadv/16">December Sixteenth</a></li>
-  
-    <li><a href="/decadv/15">December Fifteenth</a></li>
-  
-    <li><a href="/decadv/14">December Fourteenth</a></li>
-  
-    <li><a href="/decadv/12">December Twelfth</a></li>
-  
-    <li><a href="/decadv/11">December Eleventh</a></li>
-  
-    <li><a href="/decadv/10">December Tenth</a></li>
-  
-    <li><a href="/decadv/9">December Ninth</a></li>
-  
-    <li><a href="/decadv/8">December Eighth</a></li>
-  
-    <li><a href="/decadv/7">December Seventh</a></li>
-  
-    <li><a href="/decadv/6">December Sixth</a></li>
-  
-    <li><a href="/decadv/5">December Fifth</a></li>
-  
-    <li><a href="/decadv/3">December Third and Fourth</a></li>
-  
-    <li><a href="/decadv/1">December First and Second</a></li>
-  
-    <li><a href="/2023/12/01/go-debugging.html">Go Debugging</a></li>
-  
-    <li><a href="/2023/12/01/github-werkflow.html">Github Werkflow</a></li>
-  
-    <li><a href="/2023/08/27/why-go.html">Why Go</a></li>
-  
-    <li><a href="/2023/04/01/all-my-links-are-dead.html">All My Links Are Dead</a></li>
-  
-</ul>
+<p>I worked through game communication with a friend. It seems like I can have the best of both worlds where there is a long term server running on my domain chess.danielramirez.xyz/server and an option to host a server when starting a game.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># join main server to search for a game</span>
+bchess
+<span class="c"># host server (this is for my own and for player servers)</span>
+bchess serve
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># host server and join your own server</span>
+<span class="c"># requires port forwarding or playing on the same network</span>
+bchess <span class="nt">--host-at</span><span class="o">=</span>PORT
+<span class="c"># connect to player server</span>
+bchess <span class="nt">--connect</span><span class="o">=</span>HOSTNAME:PORT
+</code></pre></div></div>
+
 
         </main>
     </body>
