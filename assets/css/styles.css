@@ -609,10 +609,6 @@ ul {
   margin-bottom: 2rem;
 }
 
-.mb-0 {
-  margin-bottom: 0px;
-}
-
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -710,6 +706,10 @@ ul {
   justify-content: flex-start;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -736,10 +736,6 @@ ul {
 
 .border-r-2 {
   border-right-width: 2px;
-}
-
-.border-none {
-  border-style: none;
 }
 
 .border-r-slate-700 {
