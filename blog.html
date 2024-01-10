@@ -5,9 +5,38 @@ title: Blog
 
 <h2>Latest Posts</h2>
 
-{% for post in site.posts limit:5 %}
-    <h2 class="border-none mb-0">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </h2>
-    {{ post.excerpt }}
+{% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% assign limit = 5 %}
+{% assign counter = 0 %}
+{% for group in postsByYear %}
+
+    {% if counter < limit %}
+        <div class="flex justify-end">
+            {{ group.name }}
+        </div>
+    {% endif %}
+
+    {% for post in group.items %}
+        {% if counter <= limit %}
+            {% assign counter = counter | plus: 1 %}
+        {% else %}
+            {% break %}
+        {% endif %}
+
+        <div class="flex justify-between">
+            <div>
+                {{ post.favicon }}
+                <a class="
+                        text-stone-900 dark:text-gray-50 underline
+                        hover:bg-gray-800 hover:text-gray-50
+                        hover:dark:bg-stone-50 hover:dark:text-stone-900
+                    "
+                    href="{{ post.url | relative_url }}"
+                >{{ post.title }}</a>
+            </div>
+            <div>
+                {{ post.date | date: "%B %eth" }}
+            </div>
+        </div>
+    {% endfor %}
 {% endfor %}
